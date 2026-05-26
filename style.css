@@ -4,38 +4,64 @@ body {
     background-color: #f4f4f9;
 }
 
-
-.board {
-    display: grid;
-    grid-template-columns: repeat(4, 100px); 
-    gap: 10px;
-    justify-content: center;
-    margin-top: 30px;
+/* LA NOSTRA CLASSE MAGICA PER NASCONDERE LE COSE */
+.hidden {
+    display: none !important;
 }
 
+/* Stile per i pulsanti e le caselle di testo */
+input {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
 
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* La griglia che contiene le carte */
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Lo stile della singola carta */
 .card {
     width: 100px;
     height: 100px;
     background-color: #2c3e50;
-    color: transparent;
+    color: transparent; /* Nasconde l'emoji */
     font-size: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
     cursor: pointer;
-    user-select: none; 
+    user-select: none;
 }
 
-
 .card.flipped, .card.matched {
-    background-color: #ecf0f1; 
-    color: #000; 
+    background-color: #ecf0f1;
+    color: #000; /* Mostra l'emoji */
     cursor: default;
 }
 
-
 .card.matched {
-    background-color: #2ecc71; 
+    background-color: #2ecc71;
 }
